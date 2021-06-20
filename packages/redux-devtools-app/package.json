@@ -1,0 +1,76 @@
+{
+  "name": "@redux-devtools/app",
+  "version": "1.0.0-8",
+  "description": "Redux DevTools app",
+  "homepage": "https://github.com/reduxjs/redux-devtools/tree/master/packages/redux-devtools-app",
+  "bugs": {
+    "url": "https://github.com/reduxjs/redux-devtools/issues"
+  },
+  "license": "MIT",
+  "author": "Mihail Diordiev <zalmoxisus@gmail.com> (https://github.com/zalmoxisus)",
+  "files": [
+    "src",
+    "lib",
+    "umd"
+  ],
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/reduxjs/redux-devtools.git"
+  },
+  "scripts": {
+    "start": "webpack-dev-server --hot --inline --env.development --env.platform=web --progress",
+    "build": "npm run build:types && npm run build:js && npm run build:web && npm run build:umd && npm run build:umd:min",
+    "build:types": "tsc --emitDeclarationOnly",
+    "build:js": "babel src --out-dir lib --extensions \".ts,.tsx\" --source-maps inline",
+    "build:web": "rimraf ./build/web && webpack -p --env.platform=web --progress",
+    "build:umd": "rimraf ./umd && webpack --progress --config webpack.config.umd.ts",
+    "build:umd:min": "webpack --env.production --progress --config webpack.config.umd.ts",
+    "clean": "rimraf lib",
+    "test": "jest",
+    "lint": "eslint . --ext .ts,.tsx",
+    "lint:fix": "eslint . --ext .ts,.tsx --fix",
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "npm run type-check -- --watch",
+    "preversion": "npm run type-check && npm run lint && npm run test",
+    "prepublishOnly": "npm run clean && npm run build"
+  },
+  "dependencies": {
+    "@redux-devtools/chart-monitor": "^1.9.0",
+    "@redux-devtools/core": "^3.9.0",
+    "@redux-devtools/inspector-monitor": "^1.0.0",
+    "@redux-devtools/inspector-monitor-test-tab": "^0.7.2",
+    "@redux-devtools/inspector-monitor-trace-tab": "^0.2.2",
+    "@redux-devtools/log-monitor": "^2.3.0",
+    "@redux-devtools/slider-monitor": "^2.0.0-8",
+    "d3-state-visualizer": "^1.4.0",
+    "devui": "^1.0.0-9",
+    "javascript-stringify": "^2.1.0",
+    "jsan": "^3.1.13",
+    "jsondiffpatch": "^0.4.1",
+    "localforage": "^1.9.0",
+    "lodash": "^4.17.21",
+    "prop-types": "^15.7.2",
+    "react-icons": "^3.11.0",
+    "react-is": "^16.13.1",
+    "react-redux": "^7.2.4",
+    "redux": "^4.1.0",
+    "redux-persist": "^4.10.2",
+    "socketcluster-client": "^14.3.2",
+    "styled-components": "^5.3.0"
+  },
+  "devDependencies": {
+    "@rjsf/core": "^2.5.1",
+    "@types/json-schema": "^7.0.7",
+    "@types/socketcluster-client": "^13.0.4",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.6",
+    "enzyme-to-json": "^3.6.2",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0"
+  },
+  "peerDependencies": {
+    "react": "^16.3.0 || ^17.0.0"
+  }
+}

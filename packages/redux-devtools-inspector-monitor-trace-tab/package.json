@@ -1,0 +1,61 @@
+{
+  "name": "@redux-devtools/inspector-monitor-trace-tab",
+  "version": "0.2.2",
+  "description": "Submonitor for Redux DevTools inspector to show stack traces.",
+  "homepage": "https://github.com/reduxjs/redux-devtools/tree/master/packages/redux-devtools-inspector-monitor-trace-tab",
+  "license": "MIT",
+  "author": "Mark Erikson <mark@isquaredsoftware.com>",
+  "contributors": [
+    "Mihail Diordiev <zalmoxisus@gmail.com> (https://github.com/zalmoxisus)"
+  ],
+  "files": [
+    "lib"
+  ],
+  "main": "lib/StackTraceTab.js",
+  "types": "lib/StackTraceTab.d.ts",
+  "repository": "https://github.com/reduxjs/redux-devtools",
+  "scripts": {
+    "build": "npm run build:types && npm run build:js",
+    "build:types": "tsc --emitDeclarationOnly",
+    "build:js": "babel src --out-dir lib --extensions \".ts,.tsx\" --source-maps inline",
+    "clean": "rimraf lib",
+    "test": "jest",
+    "lint": "eslint . --ext .ts,.tsx",
+    "lint:fix": "eslint . --ext .ts,.tsx --fix",
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "npm run type-check -- --watch",
+    "preversion": "npm run type-check && npm run lint && npm run test",
+    "prepublishOnly": "npm run clean && npm run build"
+  },
+  "dependencies": {
+    "@babel/code-frame": "^7.14.5",
+    "@types/chrome": "^0.0.124",
+    "anser": "^1.4.10",
+    "html-entities": "^1.4.0",
+    "redux-devtools-themes": "^1.0.0",
+    "settle-promise": "^1.0.0"
+  },
+  "devDependencies": {
+    "@redux-devtools/core": "^3.9.0",
+    "@redux-devtools/inspector-monitor": "^1.0.0",
+    "@types/babel__code-frame": "^7.0.2",
+    "@types/enzyme": "^3.10.8",
+    "@types/enzyme-adapter-react-16": "^1.0.6",
+    "@types/html-entities": "^1.3.4",
+    "@types/react": "^16.14.8",
+    "@types/redux-devtools-themes": "^1.0.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.6",
+    "enzyme-to-json": "^3.6.2",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "react-test-renderer": "^16.14.0",
+    "redux": "^4.1.0"
+  },
+  "peerDependencies": {
+    "@redux-devtools/inspector-monitor": "^1.0.0",
+    "@types/react": "^16.3.0 || ^17.0.0",
+    "react": "^16.3.0 || ^17.0.0",
+    "redux": "^3.4.0 || ^4.0.0"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "d3-state-visualizer-tree-example",
+  "version": "0.1.0",
+  "description": "Visualize your app state as a tree",
+  "keywords": [
+    "d3",
+    "state",
+    "store",
+    "visualization"
+  ],
+  "homepage": "https://github.com/reduxjs/redux-devtools/tree/master/packages/d3-state-visualizer/examples/tree",
+  "bugs": {
+    "url": "https://github.com/reduxjs/redux-devtools/issues"
+  },
+  "license": "MIT",
+  "scripts": {
+    "start": "webpack-dev-server --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/reduxjs/redux-devtools.git"
+  },
+  "dependencies": {
+    "d3-state-visualizer": "^1.4.0",
+    "map2tree": "^1.5.0"
+  },
+  "private": true
+}

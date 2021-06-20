@@ -1,0 +1,37 @@
+{
+  "name": "slider-todomvc",
+  "version": "0.1.2",
+  "description": "TodoMVC example for redux",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/reduxjs/redux-devtools.git"
+  },
+  "scripts": {
+    "start": "webpack-dev-server",
+    "lint": "eslint . --ext .ts,.tsx",
+    "lint:fix": "eslint . --ext .ts,.tsx --fix",
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "npm run type-check -- --watch"
+  },
+  "dependencies": {
+    "@redux-devtools/core": "^3.9.0",
+    "@redux-devtools/dock-monitor": "^1.4.0",
+    "@redux-devtools/log-monitor": "^2.3.0",
+    "@redux-devtools/slider-monitor": "^2.0.0-8",
+    "classnames": "^2.3.1",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "react-hot-loader": "^4.13.0",
+    "react-redux": "^7.2.4",
+    "redux": "^4.1.0",
+    "todomvc-app-css": "^2.4.1"
+  },
+  "devDependencies": {
+    "@types/classnames": "^2.3.1",
+    "@types/react": "^16.14.8",
+    "@types/react-dom": "^16.9.13",
+    "@types/react-redux": "^7.1.16"
+  },
+  "private": true
+}
