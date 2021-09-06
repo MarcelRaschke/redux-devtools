@@ -1,0 +1,39 @@
+{
+  "extends": ["config:base", "group:allNonMajor", ":maintainLockFilesWeekly"],
+  "rangeStrategy": "bump",
+  "rebaseWhen": "conflicted",
+  "packageRules": [
+    {
+      "matchPackageNames": [
+        "@types/react",
+        "@types/react-dom",
+        "@types/react-test-renderer"
+      ],
+      "groupName": "react monorepo"
+    },
+    {
+      "matchPackageNames": ["msw", "@mswjs/data"],
+      "matchUpdateTypes": ["major", "minor"],
+      "groupName": "msw"
+    },
+    {
+      "matchPackageNames": ["knex"],
+      "matchUpdateTypes": ["major", "minor"],
+      "groupName": "knex"
+    },
+    {
+      "matchPackageNames": ["object-path"],
+      "matchUpdateTypes": ["major", "minor"],
+      "groupName": "object-path"
+    },
+    {
+      "matchPackageNames": ["typescript"],
+      "matchUpdateTypes": ["major", "minor"],
+      "groupName": "typescript"
+    },
+    {
+      "matchPackageNames": ["node"],
+      "groupName": "node"
+    }
+  ]
+}

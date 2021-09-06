@@ -1,4 +1,8 @@
 {
-  "presets": ["es2015-loose", "stage-0", "react"],
+  "presets": [
+    "@babel/preset-env",
+    "@babel/preset-react",
+    "@babel/preset-typescript"
+  ],
   "plugins": ["react-hot-loader/babel"]
 }

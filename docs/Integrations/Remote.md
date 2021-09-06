@@ -1,6 +1,6 @@
 ## Remote monitoring
 
-By installing [`redux-devtools-cli`](https://github.com/reduxjs/redux-devtools/tree/master/packages/redux-devtools-cli#usage), starting the server server and launching the Redux DevTools app (`redux-devtools --open`), you can connect any remote application, even not javascript. There are some integrations for javascript like [remote-redux-devtools](https://github.com/zalmoxisus/remote-redux-devtools) and [remotedev](https://github.com/zalmoxisus/remotedev), but the plan is to deprecate them and support it out of the box from the extension without a websocket server. It is more useful for non-js apps.
+By installing [`@redux-devtools/cli`](https://github.com/reduxjs/redux-devtools/tree/master/packages/redux-devtools-cli#usage), starting the server server and launching the Redux DevTools app (`redux-devtools --open`), you can connect any remote application, even not javascript. There are some integrations for javascript like [remote-redux-devtools](https://github.com/zalmoxisus/remote-redux-devtools) and [remotedev](https://github.com/zalmoxisus/remotedev), but the plan is to deprecate them and support it out of the box from the extension without a websocket server. It is more useful for non-js apps.
 
 ### WebSocket Clients
 
@@ -19,7 +19,7 @@ The client driver provides a way to connect to the server via websockets (see th
 ```js
 var socket = socketCluster.connect({
   hostname: 'localhost',
-  port: 8000
+  port: 8000,
 });
 ```
 
@@ -39,13 +39,13 @@ SocketCluster client handles reconnecting for you, but you still might want to k
 ##### JavaScript
 
 ```js
-socket.on('connect', status => {
+socket.on('connect', (status) => {
   // Here will come the next step
 });
-socket.on('disconnect', code => {
+socket.on('disconnect', (code) => {
   console.warn('Socket disconnected with code', code);
 });
-socket.on('error', error => {
+socket.on('error', (error) => {
   console.warn('Socket error', error);
 });
 ```
@@ -125,7 +125,7 @@ const message = {
   payload: state,
   id: socket.id,
   instanceId: window.btoa(location.href),
-  name: document.title
+  name: document.title,
 };
 socket.emit(socket.id ? 'log' : 'log-noid', message);
 ```
