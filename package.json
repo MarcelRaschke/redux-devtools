@@ -25,7 +25,9 @@
     "prettify": "prettier '**/*.{js,jsx,json,css,html,md}' --ignore-path .eslintignore --single-quote --write",
     "precommit": "lint-staged",
     "test": "jest --onlyChanged",
-    "test:all": "jest"
+    "test:all": "jest",
+    "prepare": "yarn run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "workspaces": [
     "packages/*"
@@ -43,5 +45,9 @@
       "prettier --single-quote --write",
       "git add"
     ]
+  },
+  "snyk": true,
+  "dependencies": {
+    "@snyk/protect": "latest"
   }
 }
